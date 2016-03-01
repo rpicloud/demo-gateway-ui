@@ -9,7 +9,6 @@ angular.module('gateway', []).controller('navigation',
         }
 
         self.cats = function(){
-            self.catlist = [];
             self.template = "cats.html";
             $http.get('cats', {
             }).success(function(data) {
@@ -21,5 +20,11 @@ angular.module('gateway', []).controller('navigation',
 
         self.dogs = function(){
             self.template = "dogs.html";
+            $http.get('dogs', {
+            }).success(function(data) {
+                self.doglist = data;
+            }).error(function() {
+                alert("Error");
+            });
         };
     });
