@@ -2,11 +2,13 @@ package com.rpicloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-public class DemoGatewayUiApplication {
+@EnableZuulProxy
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoGatewayUiApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }
